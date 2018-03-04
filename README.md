@@ -1,6 +1,8 @@
-# GAMIFICATION ON COMPUTER PROGRAMMING
+# ProTerm
 
 <p align="center"><img src="https://s13.postimg.org/7cgndmt9j/Nice_Hanged_Man-empty.png"  alt="design"/></p>
+
+### GAMIFICATION ON COMPUTER PROGRAMMING
 
 ## Abstract
 All over the world, traditional education system does not motivate people to learn. Because of this tedious system, people start to become less interested in learning. The popularization of computer games has created a new path for education for life long time. Digital game-based learning ensures motivational and enjoyable way to learn new information. The main goal of this study is that developed web-based game to encourage students to learn programming terms in an enjoyable way.
