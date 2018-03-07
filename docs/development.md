@@ -12,6 +12,8 @@ In JavaScript development mostly we use Node.JS, because the Node.Js provides to
 - [Browserify](http://browserify.org/) - Browserify lets you *require('modules')* in the browser by bundling up all of your dependencies.
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
 
+**Browserify:** Installing `npm i -g browserify` Usage (in src dir) `npm start` or (in src dir) `browserify index.js -o assets/js/bundle.js`
+
 ##### HTML5
 
 soon

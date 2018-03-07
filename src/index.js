@@ -1,5 +1,4 @@
 const lodash = require("lodash");
-
-const arr = ["deneme", "bir", "iki", "üc"];
-
-console.log(lodash.includes(arr, "23"));
+window.onload = function () {
+  const root = document.getElementById("root");
+};
