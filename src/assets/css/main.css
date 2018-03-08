@@ -1,0 +1,68 @@
+:root {
+    --primaryColor: #FFF8E1;
+}
+
+body {
+    background-color: var(--primaryColor);
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#playContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    position: relative
+}
+
+#welcomeText {
+    position: absolute;
+    top: 150px;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ef5350;
+    display: block;
+    text-align: center;
+}
+
+#welcomeText span {
+    display: block;
+    font-size: 1.2rem;
+}
+
+#playButton {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+}
+
+#lastGames {
+    position: absolute;
+    bottom: 75px;
+    background: #FFFFFF;
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.05);
+    width: 400px;
+}
+
+#lastGames .lastGamesTitle {
+    text-align: center;
+    padding: 10px 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+#lastGames .game {
+    padding: 10px;
+}
+
+#lastGames .game span.gameNumber {
+    background: rgba(244, 244, 244, 1);
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#lastGames .game:nth-child(odd) {
+    background: rgba(244, 244, 244, 0.4);
+}
