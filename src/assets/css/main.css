@@ -1,0 +1,38 @@
+:root {
+    --primaryColor: #FFF8E1;
+}
+
+body {
+    background-color: var(--primaryColor);
+}
+
+#playContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    position: relative
+}
+
+#welcomeText {
+    position: absolute;
+    top: 100px;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    color: #ef5350;
+    display: block;
+    text-align: center;
+}
+
+#welcomeText span {
+    display: block;
+    font-size: 1.2rem;
+}
+
+#playButton {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+}
