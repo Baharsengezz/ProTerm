@@ -45,6 +45,10 @@ Ahmet Talut | TAŞGIRAN | (Asst. Team Lead) - Developer
 Sümeyye | ÖZKAYNAK | Developer
 Aşkım | AKDAĞ | Tester
 
+## Work Status 
+
+<p align="center"><img src="https://s17.postimg.org/mxpw7g8lb/Workdone.png" alt="design"/></p>
+
 ## Used Technology
 
 - HTML5
