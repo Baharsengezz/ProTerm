@@ -49,6 +49,10 @@ Aşkım | AKDAĞ | Tester
 
 <p align="center"><img src="https://s17.postimg.org/mxpw7g8lb/Workdone.png" alt="Work Status"/></p>
 
+### Table of Features Plan 
+
+<p align="center"><img src="https://s17.postimg.org/sa60dc173/Flow.png" alt="Features Plan"/></p>
+
 ## Git Flow 
 
 <p align="center"><img src="https://s17.postimg.org/um085zcan/Master_dev.png" alt=" Git Flow"/></p>
