@@ -34,7 +34,7 @@ In this page, there is a text box to write e-mail address. If the e-mail address
 
 ## Work Done 
 
-<p align="center"><img src="https://s13.postimg.org/3supnv8k7/tobb_1024.png"  alt="design"/></p>
+<p align="center"><img src="https://s13.postimg.org/3supnv8k7/tobb_1024.png"  alt="Work Done"/></p>
 
 ### Members
 
@@ -47,7 +47,11 @@ Aşkım | AKDAĞ | Tester
 
 ## Work Status 
 
-<p align="center"><img src="https://s17.postimg.org/mxpw7g8lb/Workdone.png" alt="design"/></p>
+<p align="center"><img src="https://s17.postimg.org/mxpw7g8lb/Workdone.png" alt="Work Status"/></p>
+
+## Git Flow 
+
+<p align="center"><img src="https://s17.postimg.org/um085zcan/Master_dev.png" alt=" Git Flow"/></p>
 
 ## Used Technology
 
