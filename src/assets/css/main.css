@@ -1,6 +1,6 @@
 :root {
     --bgColor: #FFF8E1;
-    --primaryColor: rgb(244,0,84);
+    --primaryColor: rgb(244, 0, 84);
 }
 
 body {
@@ -16,8 +16,18 @@ body {
     position: relative
 }
 
+#playArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 95vh;
+    justify-content: space-between;
+    position: relative
+}
+
+
 #welcomeText {
-    position: absolute;
     top: 150px;
     font-weight: bold;
     font-size: 3rem;
@@ -69,4 +79,56 @@ body {
 
 #lastGames .game:nth-child(odd) {
     background: rgba(244, 244, 244, 0.4);
+}
+
+#loginArea {
+
+}
+
+.githubLogin {
+    padding: 15px;
+    background: var(--primaryColor);
+    font-weight: bold;
+    border-radius: 4px;
+    color: #FFFFFF;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#letters {
+    align-self: center;
+    justify-content: space-between;
+
+}
+
+#letters .letter {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    width: 32px;
+    height: 32px;
+    background: var(--primaryColor);
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-flex;
+}
+
+#theWord {
+    align-self: center;
+}
+
+#theWord .letterByWord {
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    width: 32px;
+    height: 32px;
+    background: var(--primaryColor);
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-flex;
 }

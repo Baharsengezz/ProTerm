@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProTerm | Professional Terminology, Literature, Movies</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div id="playArea">
+    <div id="welcomeText">ProTerm <span>The Game About Terminology</span></div>
+
+
+    <div id="letters"></div>
+
+    <div id="theWord"></div>
+
+    <input type="text" onkeypress="return myKeyPress(event)"/>
+</div>
+
+<script src="assets/js/bundle.js"></script>
+<script src="assets/js/lodash.js"></script>
+<script>
+    var lettersElement = document.getElementById("letters");
+    var wordElement = document.getElementById("theWord");
+    var word = "REACT";
+
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "W", "Q", "X"];
+
+    _.forEach(letters, function (val) {
+        lettersElement.innerHTML += '<div class="letter ' + val + '" id="' + val + '">' + val + '</div>';
+    });
+
+    _.forEach(word, function (val, index) {
+        console.log(index);
+
+
+        wordElement.innerHTML += '<div id="item-'+index+'" data-key="' + index + '" class="letterByWord ' + val + '" ></div>';
+    });
+
+    function myKeyPress(e) {
+        var keynum;
+
+        if (window.event) { // IE
+            keynum = e.keyCode;
+        } else if (e.which) { // Netscape/Firefox/Opera
+            keynum = e.which;
+        }
+        if (_.includes(letters, String.fromCharCode(keynum).toUpperCase())) {
+            if (_.includes(word, String.fromCharCode(keynum).toUpperCase())) {
+                var theWord = document.getElementById('item-'+_.indexOf(word,String.fromCharCode(keynum).toUpperCase()));
+                theWord.innerHTML = String.fromCharCode(keynum).toUpperCase();
+            } else {
+                console.log(false)
+            }
+
+            document.getElementById(String.fromCharCode(keynum).toUpperCase()).style.background = "#cecece";
+            document.getElementById(String.fromCharCode(keynum).toUpperCase()).style.color = "#333";
+        } else {
+
+        }
+    }
+</script>
+</body>
+</html>
