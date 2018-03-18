@@ -12,27 +12,62 @@
 
 <div id="playContainer">
     <div id="welcomeText">ProTerm <span>The Game About Terminology</span></div>
-    <div onClick="alert('Oyun Başlıyor')" id="playButton"></div>
-    <div id="lastGames">
-        <div class="lastGamesTitle">Last 5 Game</div>
-        <div class="game"><span class="gameNumber">1</span></div>
-        <div class="game"><span class="gameNumber">2</span></div>
-        <div class="game"><span class="gameNumber">3</span></div>
-        <div class="game"><span class="gameNumber">4</span></div>
-        <div class="game"><span class="gameNumber">5</span></div>
+    <div id="loginArea">
+        <div class="githubLogin" onClick="login()">Github ile Giriş Yap</div>
     </div>
 </div>
 
 <script src="assets/js/bundle.js"></script>
-<script src="node_modules/lottie-web/build/player/lottie.js" type="text/javascript"></script>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script>
-  lottie.loadAnimation({
-    container: document.getElementById("playButton"), // the dom element that will contain the animation
-    renderer : 'svg',
-    loop     : true,
-    autoplay : true,
-    path     : 'assets/lottie/play_button.json' // the path to the animation json
-  });
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
+        authDomain: "theproterm.firebaseapp.com",
+        databaseURL: "https://theproterm.firebaseio.com",
+        projectId: "theproterm",
+        storageBucket: "theproterm.appspot.com",
+        messagingSenderId: "1026041946667"
+    };
+    firebase.initializeApp(config);
+</script>
+<script>
+
+    if (localStorage.getItem("isLoginWithGithub")) {
+    } else {
+
+    }
+
+    function login() {
+        var provider = new firebase.auth.GithubAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function (result) {
+            var token = result.credential.accessToken;
+            var user = result.user;
+
+            firebase.database().ref('users/' + userId).once('value').then(function (snapshot) {
+                if (user.email === snapshot.val().email) {
+                    console.log("Deneme")
+                }
+            });
+
+            firebase.database().ref('users/' + user.uid).set({
+                username: user.displayName,
+                email: user.email,
+                photo: user.photoURL
+            });
+
+
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+        });
+    }
+
 </script>
 </body>
 </html>

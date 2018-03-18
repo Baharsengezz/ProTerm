@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ProTerm | Professional Terminology, Literature, Movies</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<div id="playContainer">
+    <div id="welcomeText">ProTerm <span>The Game About Terminology</span></div>
+    <div onClick="alert('Oyun Başlıyor')" id="playButton"></div>
+    <div id="lastGames">
+        <div class="lastGamesTitle">Last 5 Game</div>
+        <div class="game"><span class="gameNumber">1</span></div>
+        <div class="game"><span class="gameNumber">2</span></div>
+        <div class="game"><span class="gameNumber">3</span></div>
+        <div class="game"><span class="gameNumber">4</span></div>
+        <div class="game"><span class="gameNumber">5</span></div>
+    </div>
+</div>
+
+<script src="assets/js/bundle.js"></script>
+<script src="node_modules/lottie-web/build/player/lottie.js" type="text/javascript"></script>
+<script>
+  lottie.loadAnimation({
+    container: document.getElementById("playButton"), // the dom element that will contain the animation
+    renderer : 'svg',
+    loop     : true,
+    autoplay : true,
+    path     : 'assets/lottie/play_button.json' // the path to the animation json
+  });
+</script>
+</body>
+</html>
