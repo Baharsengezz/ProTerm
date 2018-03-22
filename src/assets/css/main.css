@@ -19,19 +19,13 @@ body {
 #playArea {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
-    height: 75vh;
     justify-content: space-between;
-    position: relative
 }
 
 #welcomeText {
-    top: 150px;
     font-weight: bold;
     font-size: 3rem;
     color: var(--primaryColor);
-    display: block;
     text-align: center;
 }
 
@@ -41,14 +35,13 @@ body {
 }
 
 #playButton {
-    position: absolute;
     width: 250px;
     height: 250px;
     cursor: pointer;
+    margin-top: 50px;
 }
 
 #lastGames {
-    position: absolute;
     bottom: 75px;
     background: #FFFFFF;
     box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.1);

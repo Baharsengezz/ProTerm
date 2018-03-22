@@ -49,6 +49,19 @@
 
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/lodash.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey           : "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
+    authDomain       : "theproterm.firebaseapp.com",
+    databaseURL      : "https://theproterm.firebaseio.com",
+    projectId        : "theproterm",
+    storageBucket    : "theproterm.appspot.com",
+    messagingSenderId: "1026041946667"
+  };
+  firebase.initializeApp(config);
+</script>
 <script>
   var lettersElement = document.getElementById("letters");
   var wordElement = document.getElementById("theWord");
@@ -65,9 +78,12 @@
   console.log("Word Point:", wordPoint);
 
   function letterPressed(event) {
-
+    var newPostKey;
     if (hangedManPoint <= 0) {
-      alert("yenildiniz")
+      newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
+      firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
+        status: false
+      });
     } else {
       if (_.includes(letters, event.id)) {
         if (_.includes(words[wordIndex], event.id)) {
@@ -76,7 +92,10 @@
           userPoint = userPoint + 10;
           console.log("User Point:", userPoint);
           if (userPoint === wordPoint) {
-            alert("Kazandınız!")
+            newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
+            firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
+              status: true
+            });
           }
         } else {
           hangedManPoint = hangedManPoint - 10;
