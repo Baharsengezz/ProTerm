@@ -63,6 +63,9 @@
   firebase.initializeApp(config);
 </script>
 <script>
+  if (localStorage.getItem("isLogin") !== "1") {
+    window.location.href = 'index.html';
+  }
   var lettersElement = document.getElementById("letters");
   var wordElement = document.getElementById("theWord");
   var words = ["REACT", "HTML", "JQUERY", "JAVASCRIPT", "DESIGN", "DOCUMENT", "ANDROID"];
