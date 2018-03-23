@@ -3,16 +3,41 @@
     --primaryColor: rgb(244, 0, 84);
 }
 
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     background-color: var(--bgColor);
     font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header {
+    width: 100%;
+    background: var(--primaryColor);
+}
+
+header nav {
+    align-self: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header nav a {
+    text-align: center;
+    padding: 25px;
+    display: inline-flex;
+    color: #FFFFFF;
 }
 
 #playContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 95vh;
+    height: 85vh;
     position: relative
 }
 
