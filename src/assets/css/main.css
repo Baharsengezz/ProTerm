@@ -70,6 +70,36 @@ header nav a:hover {
     padding: 20px 0;
 }
 
+#total {
+    display: none;
+    bottom: 75px;
+    background: #FFFFFF;
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px 15px;
+    align-items: center;
+    align-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    height: auto;
+}
+
+#won {
+    display: inline-flex;
+    background: #4CAF50;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+#lose {
+    display: inline-flex;
+    background: #424242;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
 #playContainer {
     display: flex;
     align-items: center;
@@ -79,12 +109,113 @@ header nav a:hover {
 }
 
 #playArea {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     height: 80vh;
     justify-content: space-between;
+}
+
+#hangman {
+    width: 600px;
+    height: 500px;
+}
+
+#modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#modalContent {
+    align-self: center;
+    width: 400px;
+    height: 400px;
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#result {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+#newGame {
+    display: block;
+    padding: 15px;
+    background: var(--primaryColor);
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+#howToPlay {
+    display: block;
+    padding: 15px;
+    background: var(--primaryColor);
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.st0 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1.5;
+    stroke-miterlimit: 10;
+}
+
+.st1 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+}
+
+.st2 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1.25;
+    stroke-miterlimit: 10;
+}
+
+.st3 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+}
+
+.st4 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 0.5;
+    stroke-miterlimit: 10;
 }
 
 #welcomeText {
@@ -100,14 +231,14 @@ header nav a:hover {
 }
 
 #playButton {
-    width: 250px;
-    height: 250px;
+    width: 175px;
+    height: 175px;
     cursor: pointer;
     margin-top: 50px;
 }
 
 #lastGames {
-    bottom: 75px;
+    margin-top: 25px;
     background: #FFFFFF;
     box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.1);
     width: 400px;
