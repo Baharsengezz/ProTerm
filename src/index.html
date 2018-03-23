@@ -9,7 +9,14 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-
+<header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/howtoplay.html">How To Play?</a>
+        <a href="/contact.html">Contact Us</a>
+    </nav>
+</header>
 <div id="playContainer" style="flex-direction: column; ">
     <div id="welcomeText">ProTerm <span>The Game About Terminology</span></div>
     <div id="loginArea" style="margin-top: 25px">
@@ -20,53 +27,53 @@
 <script src="assets/js/bundle.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey           : "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
-    authDomain       : "theproterm.firebaseapp.com",
-    databaseURL      : "https://theproterm.firebaseio.com",
-    projectId        : "theproterm",
-    storageBucket    : "theproterm.appspot.com",
-    messagingSenderId: "1026041946667"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
+        authDomain: "theproterm.firebaseapp.com",
+        databaseURL: "https://theproterm.firebaseio.com",
+        projectId: "theproterm",
+        storageBucket: "theproterm.appspot.com",
+        messagingSenderId: "1026041946667"
+    };
+    firebase.initializeApp(config);
 </script>
 <script>
 
-  if (localStorage.getItem("isLogin") === "1") {
-    window.location.href = 'play.html';
-  } else {
-    function login() {
-      var provider = new firebase.auth.GithubAuthProvider();
-      firebase.auth().signInWithPopup(provider).then(function (result) {
-        var token = result.credential.accessToken;
-        var user = result.user;
-        localStorage.setItem("email", user.email);
-        localStorage.setItem("uid", user.uid);
-        localStorage.setItem("displayName", user.displayName);
-        localStorage.setItem("photoUrl", user.photoURL);
-        localStorage.setItem("isLogin", "1");
-        writeUserData(uid, user.displayName, user.email, user.photoURL);
+    if (localStorage.getItem("isLogin") === "1") {
         window.location.href = 'play.html';
-      }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-      });
-    }
+    } else {
+        function login() {
+            var provider = new firebase.auth.GithubAuthProvider();
+            firebase.auth().signInWithPopup(provider).then(function (result) {
+                var token = result.credential.accessToken;
+                var user = result.user;
+                localStorage.setItem("email", user.email);
+                localStorage.setItem("uid", user.uid);
+                localStorage.setItem("displayName", user.displayName);
+                localStorage.setItem("photoUrl", user.photoURL);
+                localStorage.setItem("isLogin", "1");
+                writeUserData(uid, user.displayName, user.email, user.photoURL);
+            }).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+            });
+        }
 
-    function writeUserData(userId, name, email, imageUrl) {
-      firebase.database().ref('users/' + userId).set({
-        username       : name,
-        email          : email,
-        profile_picture: imageUrl
-      });
+        function writeUserData(userId, name, email, imageUrl) {
+            firebase.database().ref('users/' + userId).set({
+                username: name,
+                email: email,
+                profile_picture: imageUrl
+            });
+            location.reload();
+        }
     }
-  }
 
 </script>
 </body>
