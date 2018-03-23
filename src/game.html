@@ -199,8 +199,7 @@
     }
     var lettersElement = document.getElementById("letters");
     var wordElement = document.getElementById("theWord");
-    //var words = ["COMPILER", "INTERPRETER", "ASSEMBLY", "BODY", "EXECUTE", "LINKER", "BROWSER", "DATA", "SVG", "SOFTWARE", "BOOTSTRAP", "RESPONSIVE", "JQUERY", "SYNTAX", "ANGULAR", "REACT", "AGILE", "SCRUM", "RUBY", "GO", "APACHE", "DOCKER", "DJANGO", "DATABASE", "POSGRESQL", "MYSQL", "MSSQL", "DEVOPS", "CLOUD", "UBUNTU", "NETWORK", "AZURE", "JENKINS", "LINUX"];
-    var words = ["UBUNTU"];
+    var words = ["COMPILER", "INTERPRETER", "ASSEMBLY", "BODY", "EXECUTE", "LINKER", "BROWSER", "DATA", "SVG", "SOFTWARE", "BOOTSTRAP", "RESPONSIVE", "JQUERY", "SYNTAX", "ANGULAR", "REACT", "AGILE", "SCRUM", "RUBY", "GO", "APACHE", "DOCKER", "DJANGO", "DATABASE", "POSGRESQL", "MYSQL", "MSSQL", "DEVOPS", "CLOUD", "UBUNTU", "NETWORK", "AZURE", "JENKINS", "LINUX"];
 
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "W", "Q", "X"];
 
@@ -225,10 +224,10 @@
             if (_.includes(words[wordIndex], event.id)) {
 
                 _.forEach(words[wordIndex], function (val, index) {
-                    if(val===event.id){
+                    if (val === event.id) {
                         userPoint = userPoint + 10;
                         document.getElementById('item-' + index).innerHTML = val
-					}
+                    }
                 });
                 if (userPoint === wordPoint) {
                     newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
