@@ -14,7 +14,6 @@
         <a href="/">Home</a>
         <a href="/about.html">About Us</a>
         <a href="/howtoplay.html">How To Play?</a>
-        <a href="/contact.html">Contact Us</a>
     </nav>
 </header>
 <div id="playContainer" style="flex-direction: column; justify-content: space-around; align-items: center">
@@ -22,12 +21,17 @@
     <div id="welcomeText">
         ProTerm <span>The Game About Terminology</span>
         <br>
-        <span>Hoş geldiniz, </span><span id="userName"></span>
+        <span>Welcome, </span><span id="userName"></span>
     </div>
     <div onClick="startGame()" id="playButton"></div>
+    <div id="total">
+        <span>You won <div id="won"></div> times</span>
+        <span>You lose <div id="lose"></div> times</span>
+    </div>
     <div id="lastGames">
         <div class="lastGamesTitle">Last 5 Game</div>
         <div id="list"></div>
+
     </div>
 </div>
 
@@ -35,50 +39,58 @@
 <script src="assets/js/lodash.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey           : "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
-    authDomain       : "theproterm.firebaseapp.com",
-    databaseURL      : "https://theproterm.firebaseio.com",
-    projectId        : "theproterm",
-    storageBucket    : "theproterm.appspot.com",
-    messagingSenderId: "1026041946667"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
+        authDomain: "theproterm.firebaseapp.com",
+        databaseURL: "https://theproterm.firebaseio.com",
+        projectId: "theproterm",
+        storageBucket: "theproterm.appspot.com",
+        messagingSenderId: "1026041946667"
+    };
+    firebase.initializeApp(config);
 </script>
 <script src="node_modules/lottie-web/build/player/lottie.js" type="text/javascript"></script>
 <script>
-  if (localStorage.getItem("isLogin") !== "1") {
-    window.location.href = 'index.html';
-  }
-  function startGame() {
-    window.location.href = 'game.html';
-  }
-  getUserGameStatus();
+    if (localStorage.getItem("isLogin") !== "1") {
+        window.location.href = 'index.html';
+    }
 
-  function getUserGameStatus() {
-    var userId = localStorage.getItem("uid");
-    return firebase.database().ref('/gameStatus/' + userId).once('value').then(function (snapshot) {
-      var i = 0;
-      if (i <= 4) {
-        _.forEach(snapshot.val(), function (val) {
-          var game = val.status ? "You Won :)" : "You Lose :(";
-          var color = val.status ? "#43A047" : "#424242";
-          document.getElementById('list').innerHTML += '<div class="game" style="flex-direction: row; background: ' + color + '; color:#ffffff; justify-content: space-between;"><span class="gameStatus" style="padding-left: 15px"><b>' + game + '</b></span></div>';
-          i = i + 1;
-        })
-      }
+    function startGame() {
+        window.location.href = 'game.html';
+    }
+
+    getUserGameStatus();
+    var i = 0;
+    var won = 0;
+    var lose = 0;
+
+    function getUserGameStatus() {
+        var userId = localStorage.getItem("uid");
+        return firebase.database().ref('/gameStatus/' + userId).once('value').then(function (snapshot) {
+            _.forEach(snapshot.val(), function (val) {
+                val.status ? won = won + 1 : lose = lose + 1;
+                document.getElementById("won").innerHTML = won.toString();
+                document.getElementById("lose").innerHTML = lose.toString();
+                if (i <= 4) {
+                    var game = val.status ? "You Won :)" : "You Lose :(";
+                    var color = val.status ? "#43A047" : "#424242";
+                    document.getElementById('list').innerHTML += '<div class="game" style="flex-direction: row; background: ' + color + '; color:#ffffff; justify-content: space-between;"><span class="gameStatus" style="padding-left: 15px"><b>' + game + '</b></span></div>';
+                    i = i + 1;
+                }
+            })
+            document.getElementById("total").style.display = "flex"
+        });
+    }
+
+    document.getElementById("userName").innerHTML = localStorage.getItem("displayName");
+    lottie.loadAnimation({
+        container: document.getElementById("playButton"), // the dom element that will contain the animation
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'assets/lottie/play_button.json' // the path to the animation json
     });
-  }
-
-  document.getElementById("userName").innerHTML = localStorage.getItem("displayName");
-  lottie.loadAnimation({
-    container: document.getElementById("playButton"), // the dom element that will contain the animation
-    renderer : 'svg',
-    loop     : true,
-    autoplay : true,
-    path     : 'assets/lottie/play_button.json' // the path to the animation json
-  });
 </script>
 </body>
 </html>

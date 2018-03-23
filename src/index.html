@@ -14,7 +14,6 @@
         <a href="/">Home</a>
         <a href="/about.html">About Us</a>
         <a href="/howtoplay.html">How To Play?</a>
-        <a href="/contact.html">Contact Us</a>
     </nav>
 </header>
 <div id="playContainer" style="flex-direction: column; ">
@@ -42,38 +41,43 @@
 
     if (localStorage.getItem("isLogin") === "1") {
         window.location.href = 'play.html';
-    } else {
-        function login() {
-            var provider = new firebase.auth.GithubAuthProvider();
-            firebase.auth().signInWithPopup(provider).then(function (result) {
-                var token = result.credential.accessToken;
-                var user = result.user;
-                localStorage.setItem("email", user.email);
-                localStorage.setItem("uid", user.uid);
-                localStorage.setItem("displayName", user.displayName);
-                localStorage.setItem("photoUrl", user.photoURL);
-                localStorage.setItem("isLogin", "1");
-                writeUserData(uid, user.displayName, user.email, user.photoURL);
-            }).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-            });
-        }
-
-        function writeUserData(userId, name, email, imageUrl) {
-            firebase.database().ref('users/' + userId).set({
-                username: name,
-                email: email,
-                profile_picture: imageUrl
-            });
-            location.reload();
-        }
     }
+
+    function login() {
+        var provider = new firebase.auth.GithubAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function (result) {
+            var token = result.credential.accessToken;
+            var user = result.user;
+            writeUserData(user.uid, user.displayName, user.email, user.photoURL);
+            localStorage.setItem("email", user.email);
+            localStorage.setItem("uid", user.uid);
+            localStorage.setItem("displayName", user.displayName);
+            localStorage.setItem("photoUrl", user.photoURL);
+            localStorage.setItem("isLogin", "1");
+            localStorage.setItem("loginSuccess", "1");
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+        });
+    }
+
+    function writeUserData(userId, name, email, imageUrl) {
+
+        firebase.database().ref('users/' + userId).set({
+            username: name,
+            email: email,
+            profile_picture: imageUrl
+        });
+        setTimeout(function () {
+            location.href = "play.html"
+        }, 500)
+    }
+
 
 </script>
 </body>
