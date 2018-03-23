@@ -7,9 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ProTerm | Professional Terminology, Literature, Movies</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        #daragaci, #kafa, #vucut, #agız, #sag_goz, #sol_goz, #sag_kol, #sol_kol, #sag_ayak, #sol_ayak {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
-
+<header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/howtoplay.html">How To Play?</a>
+    </nav>
+</header>
 <div id="playArea">
     <div id="welcomeText">ProTerm <span>The Game About Terminology</span></div>
 
@@ -43,82 +54,223 @@
         <div onclick="letterPressed(this)" class="letter X" id="X">X</div>
     </div>
 
+    <div id="hangman">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 180 180" style="enable-background:new 0 0 180 180;" xml:space="preserve">
+<g id="katman_1">
+	<g id="daragaci">
+		<g>
+			<g>
+				<path d="M21.5,25.8c0,38.4,0,76.8,0,115.3c0,1.9,3,1.9,3,0c0-38.4,0-76.8,0-115.3C24.5,23.9,21.5,23.9,21.5,25.8L21.5,25.8z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M5,144.1c16.9,0,33.7,0,50.6,0c1.9,0,1.9-3,0-3c-16.9,0-33.7,0-50.6,0C3.1,141.1,3.1,144.1,5,144.1L5,144.1z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M22.7,27.3c31.8,0,63.7,0,95.5,0c1.9,0,1.9-3,0-3c-31.8,0-63.7,0-95.5,0C20.7,24.3,20.7,27.3,22.7,27.3L22.7,27.3z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M23.6,50.4c7.6,0,11-8.2,15.4-13c4.8-5.2,13.9-3.7,16.9-11.1c0.7-1.8-2.2-2.6-2.9-0.8c-2.1,5.4-10.7,5.9-15.1,9
+					c-5,3.6-7.2,13-14.3,13C21.6,47.4,21.6,50.4,23.6,50.4L23.6,50.4z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M117,27.3c1.9,0,1.9-3,0-3S115,27.3,117,27.3L117,27.3z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M117.6,25.8c0,3.3,0,6.6,0,9.8c0,1.9,3,1.9,3,0c0-3.3,0-6.6,0-9.8C120.6,23.9,117.6,23.9,117.6,25.8L117.6,25.8z"/>
+			</g>
+		</g>
+	</g>
+	<g id="kafa">
+		<g>
+			<g>
+				<path d="M117.8,35c-1.6,0.1-2.7,1.4-2.4,3c0.2,1.5,1.6,2.1,3,2.3c1.3,0.2,2.5,0.3,3.4-0.9c0.6-0.8,0.5-2,0.5-2.9
+					c0-1.9-3-1.9-3,0c0,0.4,0,0.9,0,1.3c0,0.2,0,0.1,0.1-0.1c-0.1,0.1-0.1,0.1,0.1-0.1c0.1-0.1,0.3-0.2,0.4-0.2
+					c-0.4,0.1-0.9-0.1-1.3-0.1c-0.4-0.1-0.4-0.3-0.2,0.1c0.2,0.3-0.2,0.6-0.5,0.6c0.8-0.1,1.5-0.6,1.5-1.5
+					C119.3,35.7,118.7,34.9,117.8,35L117.8,35z"/>
+			</g>
+		</g>
+		<g>
+			<g>
+				<path d="M117.1,37.3c-3.9-0.5-4.7,5.4-0.8,5.9c2.8,0.4,7.4,0.2,7.2-3.7c-0.1-1.9-3.1-1.9-3,0c0,0.5,0.1,0.5-0.3,0.6
+					c-0.5,0.2-1,0.1-1.5,0.2c-0.6,0-1.1,0-1.7,0c-0.1,0-0.2,0-0.3,0c-0.3-0.1-0.3-0.1,0,0.1c-0.1-0.4,0.4,0-0.4-0.1
+					C118.2,40.5,119.1,37.6,117.1,37.3L117.1,37.3z"/>
+			</g>
+		</g>
+		<ellipse class="st0" cx="118.9" cy="50.1" rx="7.8" ry="7.4"/>
+		<g id="ip">
+			<g>
+				<g>
+					<path d="M115,59.3c2.4,1.7,6.6,1.2,8.9-0.5c1.5-1.2,0-3.8-1.5-2.6c-1.5,1.1-4.2,1.6-5.9,0.5C114.9,55.6,113.4,58.2,115,59.3
+						L115,59.3z"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	<g id="vucut">
+		<line class="st1" x1="119" y1="60" x2="119" y2="105"/>
+	</g>
+	<g id="sol_kol">
+		<line class="st2" x1="118.4" y1="63.3" x2="103" y2="78.8"/>
+	</g>
+	<g id="sag_kol">
+		<line class="st2" x1="119.8" y1="63.3" x2="135.3" y2="78.7"/>
+	</g>
+	<g id="sol_ayak">
+		<line class="st2" x1="119.1" y1="103.5" x2="104.8" y2="118"/>
+	</g>
+	<g id="sag_ayak">
+		<line class="st2" x1="119.1" y1="103.6" x2="133.7" y2="118"/>
+	</g>
+	<g id="sol_goz">
+		<ellipse class="st3" cx="115.3" cy="48.6" rx="1.7" ry="0.8"/>
+		<path class="st4" d="M115,48.8c0.1-0.2,0-0.4,0.4-0.5c0.1,0.2,0.1,0.4,0.1,0.6c-0.4,0.2-0.3-0.1-0.5-0.2"/>
+		<path class="st4" d="M122,48.8c0.1-0.2,0-0.4,0.4-0.5c0.1,0.2,0.1,0.4,0.1,0.6c-0.4,0.2-0.3-0.1-0.5-0.2"/>
+	</g>
+	<g id="sag_goz">
+		<ellipse class="st3" cx="122.3" cy="48.6" rx="1.7" ry="0.8"/>
+	</g>
+	<g id="agız">
+		<path class="st4" d="M122,54c0,0.8-2.3,0.7-3.3,0.7c-1.1,0-2.9,0.2-2.9-0.7s2-0.8,3.1-0.8C119.7,53.2,122,53,122,54z"/>
+	</g>
+	<g id="Layer_13">
+	</g>
+	<g id="Layer_11">
+	</g>
+</g>
+<g id="katman_2">
+</g>
+</svg>
+    </div>
+
 
     <div id="theWord"></div>
+</div>
+<div id="modal">
+    <div id="modalContent">
+        <div id="result">YOU LOSE</div>
+        <div id="newGame" onClick="newGame()">New Game</div>
+        <div id="howToPlay" onClick="howToPlay()">How To Play?</div>
+    </div>
 </div>
 
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/lodash.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 <script>
-  // Initialize Firebase
-  var config = {
-    apiKey           : "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
-    authDomain       : "theproterm.firebaseapp.com",
-    databaseURL      : "https://theproterm.firebaseio.com",
-    projectId        : "theproterm",
-    storageBucket    : "theproterm.appspot.com",
-    messagingSenderId: "1026041946667"
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCvhUfzgu3Xb70kGxlMnBD6WXEGBv5jqCw",
+        authDomain: "theproterm.firebaseapp.com",
+        databaseURL: "https://theproterm.firebaseio.com",
+        projectId: "theproterm",
+        storageBucket: "theproterm.appspot.com",
+        messagingSenderId: "1026041946667"
+    };
+    firebase.initializeApp(config);
 </script>
 <script>
-  if (localStorage.getItem("isLogin") !== "1") {
-    window.location.href = 'index.html';
-  }
-  var lettersElement = document.getElementById("letters");
-  var wordElement = document.getElementById("theWord");
-  var words = ["REACT", "HTML", "JQUERY", "JAVASCRIPT", "DESIGN", "DOCUMENT", "ANDROID"];
 
-  var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "W", "Q", "X"];
+    var parts = {
+        90: "daragaci",
+        80: "kafa",
+        70: "agız",
+        60: "sag_goz",
+        50: "sol_goz",
+        40: "vucut",
+        30: "sag_kol",
+        20: "sol_kol",
+        10: "sag_ayak",
+        0: "sol_ayak"
+    };
 
-  var wordIndex = Math.floor(Math.random() * words.length);
+    if (localStorage.getItem("isLogin") !== "1") {
+        window.location.href = 'index.html';
+    }
+    var lettersElement = document.getElementById("letters");
+    var wordElement = document.getElementById("theWord");
+    //var words = ["COMPILER", "INTERPRETER", "ASSEMBLY", "BODY", "EXECUTE", "LINKER", "BROWSER", "DATA", "SVG", "SOFTWARE", "BOOTSTRAP", "RESPONSIVE", "JQUERY", "SYNTAX", "ANGULAR", "REACT", "AGILE", "SCRUM", "RUBY", "GO", "APACHE", "DOCKER", "DJANGO", "DATABASE", "POSGRESQL", "MYSQL", "MSSQL", "DEVOPS", "CLOUD", "UBUNTU", "NETWORK", "AZURE", "JENKINS", "LINUX"];
+    var words = ["UBUNTU"];
 
-  var userPoint = 0;
-  var wordPoint = words[wordIndex].length * 10;
-  var hangedManPoint = wordPoint;
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "V", "Y", "Z", "W", "Q", "X"];
 
-  console.log("Word Point:", wordPoint);
+    var wordIndex = Math.floor(Math.random() * words.length);
+    var userPoint = 0;
+    var wordPoint = words[wordIndex].length * 10;
+    var hangedManPoint = 100;
 
-  function letterPressed(event) {
-    var newPostKey;
-    if (hangedManPoint <= 0) {
-      newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
-      firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
-        status: false
-      });
-    } else {
-      if (_.includes(letters, event.id)) {
-        if (_.includes(words[wordIndex], event.id)) {
-          var theWord = document.getElementById('item-' + _.indexOf(words[wordIndex], event.id));
-          theWord.innerHTML = event.id;
-          userPoint = userPoint + 10;
-          console.log("User Point:", userPoint);
-          if (userPoint === wordPoint) {
-            newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
-            firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
-              status: true
-            });
-          }
-        } else {
-          hangedManPoint = hangedManPoint - 10;
-          console.log("Hanged Man Point", hangedManPoint);
-        }
-        document.getElementById(event.id).style.background = "#cecece";
-        document.getElementById(event.id).style.color = "#333";
-      } else {
-
-      }
+    function newGame() {
+        location.reload();
     }
 
+    function howToPlay() {
+        location.href = "howtoplay.html"
+    }
 
-  }
+    function letterPressed(event) {
 
-  _.forEach(words[wordIndex], function (val, index) {
-    wordElement.innerHTML += '<div id="item-' + index + '" data-key="' + index + '" class="letterByWord ' + val + '" ></div>';
-  });
+        var newPostKey;
 
+        if (_.includes(letters, event.id)) {
+            if (_.includes(words[wordIndex], event.id)) {
 
+                _.forEach(words[wordIndex], function (val, index) {
+                    if(val===event.id){
+                        userPoint = userPoint + 10;
+                        document.getElementById('item-' + index).innerHTML = val
+					}
+                });
+                if (userPoint === wordPoint) {
+                    newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
+                    firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
+                        status: true
+                    });
+                    setTimeout(function () {
+                        document.getElementById("hangman").style.display = "none";
+                        document.getElementById("result").style.color = '#21c800';
+                        document.getElementById("result").innerHTML = "YOU WON";
+                        document.getElementById("modal").style.display = "flex";
+                    }, 1000)
+                }
+            } else {
+                console.log("1:", hangedManPoint)
+                hangedManPoint = hangedManPoint - 10;
+                console.log("2:", hangedManPoint)
+                document.getElementById(parts[hangedManPoint]).style.visibility = "visible";
+                if (hangedManPoint === 0) {
+                    newPostKey = firebase.database().ref('gameStatus/').child(localStorage.getItem("uid")).push().key;
+                    firebase.database().ref('gameStatus/' + localStorage.getItem("uid") + '/' + newPostKey).set({
+                        status: false
+                    });
+                    setTimeout(function () {
+                        document.getElementById("hangman").style.display = "none";
+                        document.getElementById("result").style.color = '#ff0026';
+                        document.getElementById("result").innerHTML = "YOU LOSE";
+                        document.getElementById("modal").style.display = "flex";
+                    }, 300)
+                }
+
+            }
+            document.getElementById(event.id).style.background = "#cecece";
+            document.getElementById(event.id).style.color = "#333";
+        } else {
+
+        }
+    }
+
+    _.forEach(words[wordIndex], function (val, index) {
+        wordElement.innerHTML += '<div id="item-' + index + '" data-key="' + index + '" class="letterByWord ' + val + '" ></div>';
+    });
 </script>
 </body>
 </html>
